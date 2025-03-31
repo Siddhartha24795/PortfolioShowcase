@@ -1,4 +1,4 @@
-import type { Express } from "express";
+import type { Express, Request } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import multer from "multer";
@@ -13,7 +13,7 @@ const upload = multer({
   limits: {
     fileSize: 5 * 1024 * 1024, // 5MB limit
   },
-  fileFilter: (_req, file, cb) => {
+  fileFilter: (_req: Request, file: Express.Multer.File, cb: multer.FileFilterCallback) => {
     // Allow only PDFs
     if (file.mimetype !== "application/pdf") {
       return cb(new Error("Only PDF files are allowed"));
@@ -42,7 +42,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/linkedin", (req, res) => {
     // In a real implementation, this would fetch data from LinkedIn API
     res.json({
-      profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
+      profileImage: "/assets/LinkedInPicture.jpeg",
       bio: "Staff Computer Vision Researcher at Samsung Research with expertise in AR and Generative AI",
       location: "Noida, India",
       currentPosition: "Staff Computer Vision Researcher",

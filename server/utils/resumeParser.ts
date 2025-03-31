@@ -19,7 +19,7 @@ const skillsPattern = /\b(Artificial Intelligence|Deep Learning|Machine Learning
 export async function parseResumeFromPDF(): Promise<ResumeData> {
   try {
     // Path to the resume PDF
-    const pdfPath = path.resolve(__dirname, '../../attached_assets/SiddharthaMishra_SamsungResearch_IITDhn_Resume.pdf');
+    const pdfPath = '/home/runner/workspace/attached_assets/SiddharthaMishra_SamsungResearch_IITDhn_Resume.pdf';
     
     // Read PDF file
     const pdfBytes = fs.readFileSync(pdfPath);
@@ -45,10 +45,10 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
         location: "Noida, India",
       },
       socialLinks: [
-        { name: "GitHub", icon: "fa-github", url: "https://github.com/siddhartha-mishra" },
-        { name: "LinkedIn", icon: "fa-linkedin", url: "https://www.linkedin.com/in/siddhartha-mishra/" },
-        { name: "Medium", icon: "fa-medium", url: "https://medium.com/@siddhartha-mishra" },
-        { name: "LeetCode", icon: "fa-code", url: "https://leetcode.com/siddhartha-mishra/" },
+        { name: "GitHub", icon: "github", url: "https://github.com/siddhartha-mishra" },
+        { name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/siddhartha-mishra/" },
+        { name: "Medium", icon: "pen-square", url: "https://medium.com/@siddharthamishra" },
+        { name: "LeetCode", icon: "code", url: "https://leetcode.com/u/Siddhartha24795/" },
       ],
       education: [
         {
@@ -183,7 +183,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           title: "Generative Image Dynamics",
           description: "Generate seamlessly looping videos from a single image in just 3 seconds using spectral volume interpretation and modal bases approximation.",
           technologies: ["Computer Vision", "PyTorch", "Samsung"],
-          image: "https://images.unsplash.com/photo-1617791160588-241658c0f566?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+          image: "/assets/project-1.jpg",
           demoLink: "#",
           repoLink: "#",
         },
@@ -191,7 +191,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           title: "AR Touchless Doodling",
           description: "Augmented reality doodling in 3D space with precise depth perception and tracking using ARCore and computer vision techniques.",
           technologies: ["ARCore", "Computer Vision", "Android"],
-          image: "https://images.unsplash.com/photo-1579403124614-197f69d8187b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+          image: "/assets/project-2.jpg",
           demoLink: "#",
           repoLink: "#",
         },
@@ -199,7 +199,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           title: "Object Detection & Tracking",
           description: "Real-time object detection with colored bounding boxes and trajectory prediction using TensorFlow Lite and ByteTrack for IoT applications.",
           technologies: ["TensorFlow Lite", "C++", "ByteTrack"],
-          image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+          image: "/assets/project-3.jpg",
           demoLink: "#",
           repoLink: "#",
         },
@@ -207,7 +207,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           title: "Medical Image Processing Using Cycle GAN",
           description: "MTech research project using Cycle GAN for medical image processing and enhancement, with applications in diagnostic imaging.",
           technologies: ["GANs", "PyTorch", "Medical Imaging"],
-          image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+          image: "/assets/project-4.jpg",
           demoLink: "#",
           repoLink: "#",
         },
@@ -215,7 +215,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           title: "Cholesterol Prediction through Eye Images",
           description: "Non-invasive cholesterol prediction using ML and image processing on eye images. Developed during internship at Siemens Healthineers.",
           technologies: ["Machine Learning", "Image Processing", "Python"],
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+          image: "/assets/project-5.jpg",
           demoLink: "#",
           repoLink: "#",
         },
@@ -223,7 +223,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           title: "Wearable HAL Development",
           description: "Hardware Abstraction Layer for smartwatches with ML-powered tilt detection and health monitoring features that increased battery life by 40%.",
           technologies: ["C++", "IoT", "HIDL"],
-          image: "https://images.unsplash.com/photo-1611746869696-b0dbda4b2c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+          image: "/assets/project-6.jpg",
           demoLink: "#",
           repoLink: "#",
         },
@@ -234,7 +234,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           summary: "Exploring the intersection of generative models and AR technologies, with insights from recent Samsung Research projects.",
           category: "Generative AI",
           date: "Oct 15, 2023",
-          image: "https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+          image: "/assets/blog-1.jpg",
           link: "#",
         },
         {
@@ -242,7 +242,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           summary: "A comprehensive guide to quantization, pruning, and distillation techniques for running ML models efficiently on resource-constrained devices.",
           category: "Deep Learning",
           date: "Sep 25, 2023",
-          image: "https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+          image: "/assets/blog-2.jpg",
           link: "#",
         },
         {
@@ -250,7 +250,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           summary: "Analyzing how modern computer vision techniques are revolutionizing augmented reality experiences and enabling new interaction models.",
           category: "Computer Vision",
           date: "Aug 10, 2023",
-          image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+          image: "/assets/blog-3.jpg",
           link: "#",
         },
       ],
@@ -266,7 +266,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
         },
         {
           name: "LeetCode",
-          link: "https://leetcode.com/siddhartha-mishra",
+          link: "https://leetcode.com/u/Siddhartha24795/",
           stats: [
             { label: "Problems Solved", value: "320+" },
             { label: "Acceptance Rate", value: "85%" },

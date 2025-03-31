@@ -18,7 +18,10 @@ const MobileHeader = ({ onMenuClick, name }: MobileHeaderProps) => {
           >
             <FaBars className="text-xl" />
           </button>
-          <h1 className="text-lg font-bold">{name || 'Portfolio'}</h1>
+          <h1 className="text-lg font-bold flex items-center">
+            {name || 'Portfolio'}
+            <img src="/assets/indian-flag.svg" alt="Indian Flag" className="w-5 h-4 ml-2" />
+          </h1>
         </div>
         <ThemeToggle mobile />
       </div>

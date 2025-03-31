@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 9 6">
+<rect width="9" height="2" fill="#F93"/>
+<rect width="9" height="2" y="2" fill="#FFF"/>
+<rect width="9" height="2" y="4" fill="#128807"/>
+<circle transform="translate(4.5,3)" fill="#008" r="0.7"/>
+<circle transform="translate(4.5,3)" fill="#FFF" r="0.65"/>
+<g id="wheel" fill="#008">
+  <circle transform="translate(4.5,3)" r="0.15"/>
+  <g id="spokes">
+    <path d="M 4.5,2.7 4.5,3.3 M 4.2,2.82 4.8,3.18 M 4.2,3.18 4.8,2.82"/>
+    <use transform="rotate(22.5,4.5,3)"/>
+    <use transform="rotate(45,4.5,3)"/>
+    <use transform="rotate(67.5,4.5,3)"/>
+  </g>
+  <use transform="rotate(90,4.5,3)" href="#spokes"/>
+</g>
+</svg>
