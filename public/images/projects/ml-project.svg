@@ -2,75 +2,167 @@
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#9b59b6" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#9b59b6" stop-opacity="0.6"/>
+      <stop offset="0%" stop-color="#1e3799" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#3742fa" stop-opacity="1"/>
     </linearGradient>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
   
   <!-- Background -->
   <rect width="800" height="600" fill="url(#bg-gradient)"/>
   
-  <!-- Grid Lines -->
-  <g stroke="#8e44ad" stroke-width="1" opacity="0.3">
-    <line x1="0" y1="100" x2="800" y2="100" />
-    <line x1="0" y1="200" x2="800" y2="200" />
-    <line x1="0" y1="300" x2="800" y2="300" />
-    <line x1="0" y1="400" x2="800" y2="400" />
-    <line x1="0" y1="500" x2="800" y2="500" />
+  <!-- Graph Grid -->
+  <g stroke="#fff" stroke-width="0.5" opacity="0.2">
+    <!-- Vertical lines -->
+    <line x1="200" y1="150" x2="200" y2="450"/>
+    <line x1="250" y1="150" x2="250" y2="450"/>
+    <line x1="300" y1="150" x2="300" y2="450"/>
+    <line x1="350" y1="150" x2="350" y2="450"/>
+    <line x1="400" y1="150" x2="400" y2="450"/>
+    <line x1="450" y1="150" x2="450" y2="450"/>
+    <line x1="500" y1="150" x2="500" y2="450"/>
+    <line x1="550" y1="150" x2="550" y2="450"/>
+    <line x1="600" y1="150" x2="600" y2="450"/>
     
-    <line x1="100" y1="0" x2="100" y2="600" />
-    <line x1="200" y1="0" x2="200" y2="600" />
-    <line x1="300" y1="0" x2="300" y2="600" />
-    <line x1="400" y1="0" x2="400" y2="600" />
-    <line x1="500" y1="0" x2="500" y2="600" />
-    <line x1="600" y1="0" x2="600" y2="600" />
-    <line x1="700" y1="0" x2="700" y2="600" />
+    <!-- Horizontal lines -->
+    <line x1="150" y1="150" x2="650" y2="150"/>
+    <line x1="150" y1="200" x2="650" y2="200"/>
+    <line x1="150" y1="250" x2="650" y2="250"/>
+    <line x1="150" y1="300" x2="650" y2="300"/>
+    <line x1="150" y1="350" x2="650" y2="350"/>
+    <line x1="150" y1="400" x2="650" y2="400"/>
+    <line x1="150" y1="450" x2="650" y2="450"/>
   </g>
-  
-  <!-- Scatter Plot Points -->
-  <g fill="#8e44ad" opacity="0.8">
-    <circle cx="150" cy="450" r="5" />
-    <circle cx="200" cy="420" r="5" />
-    <circle cx="250" cy="390" r="5" />
-    <circle cx="270" cy="350" r="5" />
-    <circle cx="300" cy="320" r="5" />
-    <circle cx="350" cy="300" r="5" />
-    <circle cx="400" cy="280" r="5" />
-    <circle cx="450" cy="250" r="5" />
-    <circle cx="500" cy="220" r="5" />
-    <circle cx="550" cy="200" r="5" />
-    <circle cx="600" cy="170" r="5" />
-    <circle cx="650" cy="150" r="5" />
-  </g>
-  
-  <!-- Regression Line -->
-  <line x1="130" y1="470" x2="670" y2="140" stroke="#2c3e50" stroke-width="3" />
   
   <!-- Axes -->
-  <g stroke="#2c3e50" stroke-width="2">
-    <line x1="100" y1="500" x2="700" y2="500" />
-    <line x1="100" y1="100" x2="100" y2="500" />
+  <g stroke="#fff" stroke-width="2" opacity="0.8">
+    <line x1="150" y1="450" x2="650" y2="450"/> <!-- X axis -->
+    <line x1="150" y1="150" x2="150" y2="450"/> <!-- Y axis -->
     
-    <!-- X-axis tick marks -->
-    <line x1="100" y1="500" x2="100" y2="510" />
-    <line x1="200" y1="500" x2="200" y2="510" />
-    <line x1="300" y1="500" x2="300" y2="510" />
-    <line x1="400" y1="500" x2="400" y2="510" />
-    <line x1="500" y1="500" x2="500" y2="510" />
-    <line x1="600" y1="500" x2="600" y2="510" />
-    <line x1="700" y1="500" x2="700" y2="510" />
-    
-    <!-- Y-axis tick marks -->
-    <line x1="90" y1="100" x2="100" y2="100" />
-    <line x1="90" y1="200" x2="100" y2="200" />
-    <line x1="90" y1="300" x2="100" y2="300" />
-    <line x1="90" y1="400" x2="100" y2="400" />
-    <line x1="90" y1="500" x2="100" y2="500" />
+    <!-- Axis labels -->
+    <text x="400" y="480" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">Features</text>
+    <text x="120" y="300" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle" transform="rotate(-90,120,300)">Accuracy</text>
   </g>
   
-  <!-- Text overlay -->
-  <text x="400" y="550" font-family="Arial, sans-serif" font-size="20" fill="#2c3e50" text-anchor="middle">Features</text>
-  <text x="50" y="300" font-family="Arial, sans-serif" font-size="20" fill="#2c3e50" text-anchor="middle" transform="rotate(-90 50,300)">Predictions</text>
+  <!-- Data Points for Classification -->
+  <g>
+    <!-- Class A points -->
+    <circle cx="200" cy="380" r="5" fill="#70a1ff" opacity="0.8"/>
+    <circle cx="220" cy="350" r="5" fill="#70a1ff" opacity="0.8"/>
+    <circle cx="240" cy="360" r="5" fill="#70a1ff" opacity="0.8"/>
+    <circle cx="260" cy="340" r="5" fill="#70a1ff" opacity="0.8"/>
+    <circle cx="270" cy="370" r="5" fill="#70a1ff" opacity="0.8"/>
+    <circle cx="290" cy="350" r="5" fill="#70a1ff" opacity="0.8"/>
+    <circle cx="310" cy="360" r="5" fill="#70a1ff" opacity="0.8"/>
+    <circle cx="330" cy="345" r="5" fill="#70a1ff" opacity="0.8"/>
+    <circle cx="350" cy="375" r="5" fill="#70a1ff" opacity="0.8"/>
+    
+    <!-- Class B points -->
+    <circle cx="230" cy="230" r="5" fill="#ff7f50" opacity="0.8"/>
+    <circle cx="250" cy="200" r="5" fill="#ff7f50" opacity="0.8"/>
+    <circle cx="270" cy="210" r="5" fill="#ff7f50" opacity="0.8"/>
+    <circle cx="290" cy="190" r="5" fill="#ff7f50" opacity="0.8"/>
+    <circle cx="310" cy="220" r="5" fill="#ff7f50" opacity="0.8"/>
+    <circle cx="330" cy="200" r="5" fill="#ff7f50" opacity="0.8"/>
+    <circle cx="350" cy="210" r="5" fill="#ff7f50" opacity="0.8"/>
+    <circle cx="370" cy="195" r="5" fill="#ff7f50" opacity="0.8"/>
+    <circle cx="390" cy="225" r="5" fill="#ff7f50" opacity="0.8"/>
+    
+    <!-- Class C points -->
+    <circle cx="380" cy="300" r="5" fill="#7bed9f" opacity="0.8"/>
+    <circle cx="400" cy="290" r="5" fill="#7bed9f" opacity="0.8"/>
+    <circle cx="420" cy="310" r="5" fill="#7bed9f" opacity="0.8"/>
+    <circle cx="440" cy="280" r="5" fill="#7bed9f" opacity="0.8"/>
+    <circle cx="460" cy="300" r="5" fill="#7bed9f" opacity="0.8"/>
+    <circle cx="480" cy="290" r="5" fill="#7bed9f" opacity="0.8"/>
+    <circle cx="500" cy="310" r="5" fill="#7bed9f" opacity="0.8"/>
+    <circle cx="520" cy="295" r="5" fill="#7bed9f" opacity="0.8"/>
+    <circle cx="540" cy="305" r="5" fill="#7bed9f" opacity="0.8"/>
+  </g>
   
-  <text x="400" y="50" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#2c3e50" text-anchor="middle">Machine Learning</text>
+  <!-- Decision Boundaries -->
+  <g fill="none" stroke-width="2" opacity="0.7">
+    <!-- Horizontal boundary -->
+    <path d="M150,260 C250,270 350,265 650,250" stroke="#fff" stroke-dasharray="5,3"/>
+    
+    <!-- Vertical-ish boundary -->
+    <path d="M365,150 C370,250 360,350 360,450" stroke="#fff" stroke-dasharray="5,3"/>
+  </g>
+  
+  <!-- Machine Learning Elements -->
+  <g>
+    <!-- Model Representation -->
+    <g transform="translate(580, 200)" filter="url(#glow)">
+      <rect x="-40" y="-30" width="80" height="60" rx="5" ry="5" fill="#1e3799" stroke="#fff" stroke-width="1"/>
+      <text x="0" y="0" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">ML Model</text>
+      <text x="0" y="15" font-family="monospace" font-size="8" fill="#fff" text-anchor="middle">Accuracy: 92%</text>
+    </g>
+    
+    <!-- Feature Vector -->
+    <g transform="translate(580, 300)">
+      <rect x="-40" y="-30" width="80" height="60" rx="5" ry="5" fill="none" stroke="#fff" stroke-width="1" opacity="0.6"/>
+      <text x="0" y="-15" font-family="monospace" font-size="8" fill="#fff" text-anchor="middle">[x₁, x₂, x₃]</text>
+      <text x="0" y="0" font-family="monospace" font-size="8" fill="#fff" text-anchor="middle">[0.2, 0.8, 0.5]</text>
+      <text x="0" y="15" font-family="monospace" font-size="8" fill="#fff" text-anchor="middle">[0.9, 0.1, 0.4]</text>
+    </g>
+    
+    <!-- Algorithm Types -->
+    <g transform="translate(580, 400)">
+      <rect x="-40" y="-30" width="80" height="60" rx="5" ry="5" fill="none" stroke="#fff" stroke-width="1" opacity="0.6"/>
+      <text x="0" y="-15" font-family="monospace" font-size="8" fill="#fff" text-anchor="middle">SVM</text>
+      <text x="0" y="0" font-family="monospace" font-size="8" fill="#fff" text-anchor="middle">Random Forest</text>
+      <text x="0" y="15" font-family="monospace" font-size="8" fill="#fff" text-anchor="middle">Neural Networks</text>
+    </g>
+  </g>
+  
+  <!-- Additional ML Elements -->
+  <g opacity="0.8">
+    <!-- Confusion Matrix -->
+    <g transform="translate(200, 540)">
+      <rect x="-40" y="-30" width="80" height="60" fill="none" stroke="#fff" stroke-width="1"/>
+      <line x1="-40" y1="0" x2="40" y2="0" stroke="#fff" stroke-width="1"/>
+      <line x1="0" y1="-30" x2="0" y2="30" stroke="#fff" stroke-width="1"/>
+      <text x="-20" y="-10" font-family="monospace" font-size="12" fill="#fff" text-anchor="middle">TP</text>
+      <text x="20" y="-10" font-family="monospace" font-size="12" fill="#fff" text-anchor="middle">FP</text>
+      <text x="-20" y="20" font-family="monospace" font-size="12" fill="#fff" text-anchor="middle">FN</text>
+      <text x="20" y="20" font-family="monospace" font-size="12" fill="#fff" text-anchor="middle">TN</text>
+      <text x="0" y="-40" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">Confusion Matrix</text>
+    </g>
+    
+    <!-- ROC Curve -->
+    <g transform="translate(350, 540)">
+      <rect x="-40" y="-30" width="80" height="60" fill="none" stroke="#fff" stroke-width="1"/>
+      <path d="M-40,30 C-20,20 0,-10 40,-30" stroke="#7bed9f" stroke-width="2" fill="none"/>
+      <line x1="-40" y1="30" x2="40" y2="-30" stroke="#fff" stroke-width="0.5" stroke-dasharray="3,2"/>
+      <text x="0" y="-40" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">ROC Curve</text>
+    </g>
+    
+    <!-- Learning Curve -->
+    <g transform="translate(500, 540)">
+      <rect x="-40" y="-30" width="80" height="60" fill="none" stroke="#fff" stroke-width="1"/>
+      <path d="M-40,10 C-30,15 -20,0 -10,5 C0,10 10,-5 20,0 C30,5 35,-15 40,-25" stroke="#70a1ff" stroke-width="2" fill="none"/>
+      <path d="M-40,30 C-30,20 -20,25 -10,15 C0,10 10,15 20,10 C30,5 35,5 40,0" stroke="#ff7f50" stroke-width="2" fill="none"/>
+      <text x="0" y="-40" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">Learning Curve</text>
+    </g>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#fff" text-anchor="middle">Machine Learning</text>
+  <text x="400" y="120" font-family="Arial, sans-serif" font-size="18" fill="#fff" text-anchor="middle" opacity="0.8">Classification and Prediction</text>
+  
+  <!-- Legend -->
+  <g transform="translate(220, 500)">
+    <circle cx="0" cy="0" r="5" fill="#70a1ff"/>
+    <text x="15" y="4" font-family="Arial, sans-serif" font-size="12" fill="#fff">Class A</text>
+    
+    <circle cx="80" cy="0" r="5" fill="#ff7f50"/>
+    <text x="95" y="4" font-family="Arial, sans-serif" font-size="12" fill="#fff">Class B</text>
+    
+    <circle cx="160" cy="0" r="5" fill="#7bed9f"/>
+    <text x="175" y="4" font-family="Arial, sans-serif" font-size="12" fill="#fff">Class C</text>
+  </g>
 </svg>
