@@ -1,7 +1,8 @@
 import { ContactDetails, SocialLink } from "@/types";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaFileDownload } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import { Globe, Github, Linkedin, PenSquare, Code, Mail, Phone, MapPin, Link } from "lucide-react";
+import { Globe, Github, Linkedin, PenSquare, Code, Mail, Phone, MapPin, Link, FileText, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface AboutSectionProps {
@@ -87,6 +88,23 @@ const AboutSection = ({
                 <p className="text-gray-700 dark:text-gray-300 mb-6 text-justify">
                   Passionate about Vibe Coding—blending creativity and engineering for immersive <span className="font-semibold text-blue-700 dark:text-blue-300">AI experiences</span>. With a Master's degree in Artificial Intelligence from IIT Dhanbad, I bridge the gap between theoretical AI advancements and practical applications that enhance user experiences.
                 </p>
+                
+                {/* Resume Download Section */}
+                <div className="mb-6 flex justify-center">
+                  <a 
+                    href="/assets/SiddharthaMishra_SamsungResearch_IITDhn_Resume.pdf" 
+                    download="SiddharthaMishra_Resume.pdf"
+                    className="group"
+                  >
+                    <Button
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow-md flex items-center gap-2 transition-all transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"
+                    >
+                      <FileText className="w-5 h-5 group-hover:animate-pulse" />
+                      <span>Download Resume</span>
+                      <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
+                    </Button>
+                  </a>
+                </div>
                 
                 <div className="border border-blue-200 dark:border-blue-800 rounded-lg p-6 bg-blue-50 dark:bg-blue-900/20 shadow-md">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b59b6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#9b59b6" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg-gradient)"/>
+  
+  <!-- Grid Lines -->
+  <g stroke="#8e44ad" stroke-width="1" opacity="0.3">
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="0" y1="500" x2="800" y2="500" />
+    
+    <line x1="100" y1="0" x2="100" y2="600" />
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="300" y1="0" x2="300" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="500" y1="0" x2="500" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    <line x1="700" y1="0" x2="700" y2="600" />
+  </g>
+  
+  <!-- Scatter Plot Points -->
+  <g fill="#8e44ad" opacity="0.8">
+    <circle cx="150" cy="450" r="5" />
+    <circle cx="200" cy="420" r="5" />
+    <circle cx="250" cy="390" r="5" />
+    <circle cx="270" cy="350" r="5" />
+    <circle cx="300" cy="320" r="5" />
+    <circle cx="350" cy="300" r="5" />
+    <circle cx="400" cy="280" r="5" />
+    <circle cx="450" cy="250" r="5" />
+    <circle cx="500" cy="220" r="5" />
+    <circle cx="550" cy="200" r="5" />
+    <circle cx="600" cy="170" r="5" />
+    <circle cx="650" cy="150" r="5" />
+  </g>
+  
+  <!-- Regression Line -->
+  <line x1="130" y1="470" x2="670" y2="140" stroke="#2c3e50" stroke-width="3" />
+  
+  <!-- Axes -->
+  <g stroke="#2c3e50" stroke-width="2">
+    <line x1="100" y1="500" x2="700" y2="500" />
+    <line x1="100" y1="100" x2="100" y2="500" />
+    
+    <!-- X-axis tick marks -->
+    <line x1="100" y1="500" x2="100" y2="510" />
+    <line x1="200" y1="500" x2="200" y2="510" />
+    <line x1="300" y1="500" x2="300" y2="510" />
+    <line x1="400" y1="500" x2="400" y2="510" />
+    <line x1="500" y1="500" x2="500" y2="510" />
+    <line x1="600" y1="500" x2="600" y2="510" />
+    <line x1="700" y1="500" x2="700" y2="510" />
+    
+    <!-- Y-axis tick marks -->
+    <line x1="90" y1="100" x2="100" y2="100" />
+    <line x1="90" y1="200" x2="100" y2="200" />
+    <line x1="90" y1="300" x2="100" y2="300" />
+    <line x1="90" y1="400" x2="100" y2="400" />
+    <line x1="90" y1="500" x2="100" y2="500" />
+  </g>
+  
+  <!-- Text overlay -->
+  <text x="400" y="550" font-family="Arial, sans-serif" font-size="20" fill="#2c3e50" text-anchor="middle">Features</text>
+  <text x="50" y="300" font-family="Arial, sans-serif" font-size="20" fill="#2c3e50" text-anchor="middle" transform="rotate(-90 50,300)">Predictions</text>
+  
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#2c3e50" text-anchor="middle">Machine Learning</text>
+</svg>
