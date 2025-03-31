@@ -29,13 +29,13 @@ const SkillsSection = ({ skills, isLoading }: SkillsSectionProps) => {
   const getCategoryColorClass = (index: number) => {
     switch (index % 3) {
       case 0:
-        return "bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400";
+        return "bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300";
       case 1:
-        return "bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-400";
+        return "bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300";
       case 2:
-        return "bg-accent-100 dark:bg-accent-900 text-accent-600 dark:text-accent-400";
+        return "bg-sky-100 dark:bg-sky-900 text-sky-600 dark:text-sky-300";
       default:
-        return "bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400";
+        return "bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300";
     }
   };
 
@@ -59,13 +59,13 @@ const SkillsSection = ({ skills, isLoading }: SkillsSectionProps) => {
   const getProgressBarColor = (index: number) => {
     switch (index % 3) {
       case 0:
-        return "bg-primary-600";
+        return "bg-blue-600 dark:bg-blue-500";
       case 1:
-        return "bg-secondary-600";
+        return "bg-indigo-600 dark:bg-indigo-500";
       case 2:
-        return "bg-accent-600";
+        return "bg-sky-600 dark:bg-sky-500";
       default:
-        return "bg-primary-600";
+        return "bg-blue-600 dark:bg-blue-500";
     }
   };
 
@@ -99,22 +99,22 @@ const SkillsSection = ({ skills, isLoading }: SkillsSectionProps) => {
           ) : (
             // Actual skill categories
             skills.categories.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                <div className="flex items-center mb-4">
-                  <div className={`w-10 h-10 rounded-full ${getCategoryColorClass(categoryIndex)} flex items-center justify-center`}>
+              <div key={categoryIndex} className="bg-blue-50 dark:bg-blue-900/20 rounded-lg shadow-md p-6 border border-blue-100 dark:border-blue-800">
+                <div className="flex items-center mb-5">
+                  <div className={`w-12 h-12 rounded-full ${getCategoryColorClass(categoryIndex)} flex items-center justify-center border-2 border-white dark:border-gray-700 shadow-md`}>
                     {getCategoryIcon(category.name)}
                   </div>
-                  <h3 className="text-xl font-bold ml-3">{category.name}</h3>
+                  <h3 className="text-xl font-bold ml-4 text-gray-900 dark:text-white">{category.name}</h3>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-5">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{skill.name}</span>
-                        <span className="text-sm text-gray-600 dark:text-gray-400">{skill.level}</span>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">{skill.name}</span>
+                        <span className="text-sm font-medium px-2 py-0.5 rounded-md bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200">{skill.level}</span>
                       </div>
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                        <div className={`${getProgressBarColor(categoryIndex)} h-2 rounded-full ${getProgressWidth(skill.level)}`}></div>
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 shadow-inner">
+                        <div className={`${getProgressBarColor(categoryIndex)} h-3 rounded-full ${getProgressWidth(skill.level)} shadow-md transition-all duration-500 ease-in-out`}></div>
                       </div>
                     </div>
                   ))}
@@ -124,18 +124,23 @@ const SkillsSection = ({ skills, isLoading }: SkillsSectionProps) => {
           )}
           
           {/* Additional Skills */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 md:col-span-3">
-            <h3 className="text-xl font-bold mb-4">Additional Skills</h3>
+          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg shadow-md p-6 md:col-span-3 border border-blue-100 dark:border-blue-800">
+            <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center">
+              <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 flex items-center justify-center mr-3 border border-blue-200 dark:border-blue-700">
+                <FaLayerGroup />
+              </div>
+              Additional Skills
+            </h3>
             {isLoading ? (
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {Array(20).fill(0).map((_, i) => (
                   <Skeleton key={i} className="h-8 w-24" />
                 ))}
               </div>
             ) : (
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {skills.additionalSkills.map((skill, index) => (
-                  <span key={index} className="inline-block px-3 py-1 text-sm font-medium rounded-md bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+                  <span key={index} className="inline-block px-4 py-2 text-sm font-medium rounded-md bg-white dark:bg-gray-800 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-700 shadow-sm hover:shadow-md transition-shadow">
                     {skill}
                   </span>
                 ))}

@@ -108,7 +108,7 @@ const AboutSection = ({
                         <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0 mt-1">
                           <MapPin className="text-blue-600 dark:text-blue-400 w-5 h-5" />
                         </div>
-                        <span className="ml-3 text-gray-700 dark:text-gray-300">{contactDetails.location}</span>
+                        <span className="ml-3 text-gray-700 dark:text-gray-300 mt-2">{contactDetails.location}</span>
                       </li>
                     </ul>
                   </div>
