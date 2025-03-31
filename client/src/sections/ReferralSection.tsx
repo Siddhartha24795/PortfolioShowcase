@@ -160,7 +160,7 @@ const ReferralSection = () => {
                       <FormLabel>Country Code</FormLabel>
                       <select 
                         {...field}
-                        className="w-full rounded-md border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500 p-2"
+                        className="w-full rounded-md border border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500 p-2"
                       >
                         <option value="+91">India (+91)</option>
                         <option value="+1">USA/Canada (+1)</option>

@@ -113,7 +113,7 @@ const ExperienceSection = ({ experiences, isLoading }: ExperienceSectionProps) =
                           })}
                         </div>
                         
-                        {(experience.technologies && experience.technologies.length > 0) || experience.company === "IIT Dhanbad" ? (
+                        {(experience.technologies && experience.technologies.length > 0) || experience.company === "IIT Dhanbad" || experience.company === "Other Experiences" ? (
                           <div className="mt-5 pt-4 border-t border-gray-200 dark:border-gray-700">
                             <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-3">Technologies Used:</h4>
                             <div className="flex flex-wrap gap-2">
@@ -125,6 +125,12 @@ const ExperienceSection = ({ experiences, isLoading }: ExperienceSectionProps) =
                                 ))
                               ) : experience.company === "IIT Dhanbad" ? (
                                 ["C++", "Python", "ML", "Deep Learning"].map((tech, i) => (
+                                  <span key={i} className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 border border-blue-200 dark:border-blue-700">
+                                    {tech}
+                                  </span>
+                                ))
+                              ) : experience.company === "Other Experiences" ? (
+                                ["ML", "Java", "JavaScript", "C++", "Jira", "Agile Methodology"].map((tech, i) => (
                                   <span key={i} className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 border border-blue-200 dark:border-blue-700">
                                     {tech}
                                   </span>

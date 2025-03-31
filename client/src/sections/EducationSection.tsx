@@ -1,3 +1,4 @@
+import React from "react";
 import { Education } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
 import { FaExternalLinkAlt, FaGraduationCap } from "react-icons/fa";
@@ -48,22 +49,20 @@ const EducationSection = ({ education, isLoading }: EducationSectionProps) => {
                     <div className="text-sm font-medium bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 px-3 py-1 rounded-full">{edu.years}</div>
                   </div>
                   <p className="text-gray-800 dark:text-gray-200 mb-4 border-l-4 border-blue-300 dark:border-blue-700 pl-3 py-1">
-                    {/* Split description by commas and highlight only Ramanujan Mathematics Olympiad */}
-                    {edu.description.split(',').map((part, idx) => {
-                      // Only highlight the Ramanujan Mathematics Olympiad
-                      const isRamanujanOlympiad = part.includes("Ramanujan Mathematics Olympiad");
-                      
+                    {/* Highlight only the words "Ramanujan Mathematics Olympiad" */}
+                    {edu.description.split('Ramanujan Mathematics Olympiad').map((part, idx, arr) => {
+                      // If it's the last part or there's only one part
+                      if (idx === arr.length - 1) {
+                        return <span key={idx}>{part}</span>;
+                      }
+                      // Otherwise, it's a part that's followed by "Ramanujan Mathematics Olympiad"
                       return (
-                        <span key={idx}>
-                          {idx > 0 && <span>,&nbsp;</span>}
-                          {isRamanujanOlympiad ? (
-                            <span className="bg-indigo-800 dark:bg-indigo-700 text-white font-semibold px-2 py-1 rounded">
-                              {part.trim()}
-                            </span>
-                          ) : (
-                            part.trim()
-                          )}
-                        </span>
+                        <React.Fragment key={idx}>
+                          {part}
+                          <span className="bg-indigo-800 dark:bg-indigo-700 text-white font-semibold px-2 py-1 rounded">
+                            Ramanujan Mathematics Olympiad
+                          </span>
+                        </React.Fragment>
                       );
                     })}
                   </p>
