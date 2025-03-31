@@ -51,8 +51,8 @@ const ProjectsSection = ({ projects, isLoading }: ProjectsSectionProps) => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     </>
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary-100 to-primary-300 dark:from-primary-900 dark:to-primary-700 flex items-center justify-center p-6">
-                      <span className="text-primary-800 dark:text-primary-100 text-xl font-bold">{project.title}</span>
+                    <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-300 dark:from-blue-900 dark:to-blue-700 flex items-center justify-center p-6">
+                      <span className="text-blue-800 dark:text-blue-100 text-xl font-bold">{project.title}</span>
                     </div>
                   )}
                 </div>
@@ -63,7 +63,7 @@ const ProjectsSection = ({ projects, isLoading }: ProjectsSectionProps) => {
                   </p>
                   <div className="flex flex-wrap gap-2 mb-5">
                     {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline" className="bg-primary-50 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 border-primary-200 dark:border-primary-700">
+                      <Badge key={techIndex} variant="outline" className="bg-blue-50 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700">
                         {tech}
                       </Badge>
                     ))}
@@ -72,7 +72,7 @@ const ProjectsSection = ({ projects, isLoading }: ProjectsSectionProps) => {
                     {project.demoLink && (
                       <a 
                         href={project.demoLink} 
-                        className="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-medium text-sm flex items-center transition-colors"
+                        className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium text-sm flex items-center transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -82,7 +82,7 @@ const ProjectsSection = ({ projects, isLoading }: ProjectsSectionProps) => {
                     {project.repoLink && (
                       <a 
                         href={project.repoLink} 
-                        className="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-medium text-sm flex items-center transition-colors"
+                        className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium text-sm flex items-center transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -99,7 +99,7 @@ const ProjectsSection = ({ projects, isLoading }: ProjectsSectionProps) => {
         <div className="mt-10 text-center">
           <a 
             href="https://github.com/siddhartha-mishra" 
-            className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors shadow-md"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md"
             target="_blank"
             rel="noopener noreferrer"
           >

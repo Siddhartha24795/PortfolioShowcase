@@ -92,21 +92,21 @@ const AboutSection = ({
                   <div>
                     <h4 className="font-medium text-gray-900 dark:text-white mb-4 text-lg">Contact Details</h4>
                     <ul className="space-y-4">
-                      <li className="flex items-center">
-                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
-                          <Mail className="text-primary dark:text-primary-400 w-5 h-5" />
+                      <li className="flex items-start">
+                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0 mt-1">
+                          <Mail className="text-blue-600 dark:text-blue-400 w-5 h-5" />
                         </div>
-                        <span className="ml-3 text-gray-700 dark:text-gray-300">{contactDetails.email}</span>
+                        <span className="ml-3 text-gray-700 dark:text-gray-300 break-all">{contactDetails.email}</span>
                       </li>
-                      <li className="flex items-center">
-                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
-                          <Phone className="text-primary dark:text-primary-400 w-5 h-5" />
+                      <li className="flex items-start">
+                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0 mt-1">
+                          <Phone className="text-blue-600 dark:text-blue-400 w-5 h-5" />
                         </div>
                         <span className="ml-3 text-gray-700 dark:text-gray-300">{contactDetails.phone}</span>
                       </li>
-                      <li className="flex items-center">
-                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
-                          <MapPin className="text-primary dark:text-primary-400 w-5 h-5" />
+                      <li className="flex items-start">
+                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0 mt-1">
+                          <MapPin className="text-blue-600 dark:text-blue-400 w-5 h-5" />
                         </div>
                         <span className="ml-3 text-gray-700 dark:text-gray-300">{contactDetails.location}</span>
                       </li>
@@ -119,7 +119,7 @@ const AboutSection = ({
                         <a 
                           key={index}
                           href={link.url} 
-                          className="flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 text-primary dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors icon-dark-visible"
+                          className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
                           target="_blank"
                           rel="noopener noreferrer"
                           title={link.name}

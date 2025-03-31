@@ -49,14 +49,14 @@ const HeroSection = ({ name, role, bio, stats, isLoading }: HeroSectionProps) =>
                 <div className="flex flex-wrap gap-3">
                   <Button
                     onClick={() => scrollToSection('about')}
-                    className="px-6 py-3 bg-white text-primary-600 font-medium rounded-md hover:bg-gray-100 transition-colors shadow-md"
+                    className="px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-md border-2 border-white"
                   >
                     Contact Me
                   </Button>
                   <Button
                     onClick={() => scrollToSection('referrals')}
                     variant="outline"
-                    className="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-md hover:bg-white hover:bg-opacity-10 transition-colors"
+                    className="px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/20 hover:text-white transition-colors"
                   >
                     Request Referral
                   </Button>
