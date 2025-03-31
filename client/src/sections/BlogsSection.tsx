@@ -190,7 +190,7 @@ const BlogsSection = ({ blogs, isLoading }: BlogsSectionProps) => {
         
         <div className="mt-12 text-center">
           <a 
-            href="https://medium.com/@siddhartha-mishra" 
+            href="https://medium.com/@siddharthamishra" 
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 text-white font-medium rounded-lg hover:from-gray-700 hover:to-gray-800 dark:hover:from-gray-600 dark:hover:to-gray-700 transition-all shadow-md"
             target="_blank"
             rel="noopener noreferrer"

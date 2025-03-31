@@ -102,7 +102,6 @@ const AboutSection = ({
                     >
                       <FileText className="w-5 h-5 group-hover:animate-pulse" />
                       <span>View Resume</span>
-                      <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
                     </Button>
                   </a>
                 </div>
@@ -117,23 +116,23 @@ const AboutSection = ({
                         Contact Details
                       </h4>
                       <ul className="space-y-4">
-                        <li className="flex items-start">
-                          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 mt-1 border border-blue-200 dark:border-blue-700">
+                        <li className="flex items-center">
+                          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 border border-blue-200 dark:border-blue-700">
                             <Mail className="text-blue-600 dark:text-blue-400 w-5 h-5" />
                           </div>
-                          <span className="ml-3 text-gray-700 dark:text-gray-300 break-all pt-2">{contactDetails.email}</span>
+                          <span className="ml-3 text-gray-700 dark:text-gray-300 break-all">{contactDetails.email}</span>
                         </li>
-                        <li className="flex items-start">
-                          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 mt-1 border border-blue-200 dark:border-blue-700">
+                        <li className="flex items-center">
+                          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 border border-blue-200 dark:border-blue-700">
                             <Phone className="text-blue-600 dark:text-blue-400 w-5 h-5" />
                           </div>
-                          <span className="ml-3 text-gray-700 dark:text-gray-300 pt-2">{contactDetails.phone}</span>
+                          <span className="ml-3 text-gray-700 dark:text-gray-300">{contactDetails.phone}</span>
                         </li>
-                        <li className="flex items-start">
-                          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 mt-1 border border-blue-200 dark:border-blue-700">
+                        <li className="flex items-center">
+                          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 border border-blue-200 dark:border-blue-700">
                             <MapPin className="text-blue-600 dark:text-blue-400 w-5 h-5" />
                           </div>
-                          <span className="ml-3 text-gray-700 dark:text-gray-300 pt-2">{contactDetails.location}</span>
+                          <span className="ml-3 text-gray-700 dark:text-gray-300">{contactDetails.location}</span>
                         </li>
                       </ul>
                     </div>

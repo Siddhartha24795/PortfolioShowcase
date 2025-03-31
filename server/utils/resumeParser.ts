@@ -117,11 +117,11 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           title: "Various Roles",
           date: "2015 - 2020",
           description: [
-            "Guest Lecturer & Hackathon Judge (Sept 2020 - Present): Mentoring competitive coding and data science programs.",
-            "Siemens Healthineers (Intern, July 2019 - Feb 2020): Cholesterol prediction through eye images using ML and image processing.",
-            "Wheelseye Technology (Sept 2017 - Dec 2017): Developed APIs for live tracking and route optimization with ML."
+            "**Guest Lecturer & Hackathon Judge** (Sept 2020 - Present): Mentoring competitive coding and data science programs.",
+            "**Siemens Healthineers** (Intern, July 2019 - Feb 2020): Cholesterol prediction through eye images using ML and image processing.",
+            "**Wheelseye Technology** (Sept 2017 - Dec 2017): Developed APIs for live tracking and route optimization with ML."
           ],
-          technologies: [],
+          technologies: ["Agile Methodology", "Scrum", "JIRA", "Kanban", "Sprint Planning", "Product Backlog", "Retrospectives"],
         },
       ],
       skills: {

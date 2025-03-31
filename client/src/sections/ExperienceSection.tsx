@@ -86,11 +86,31 @@ const ExperienceSection = ({ experiences, isLoading }: ExperienceSectionProps) =
                     
                       <div className="p-5">
                         <div className="space-y-3">
-                          {experience.description.map((desc, i) => (
-                            <p key={i} className="text-gray-800 dark:text-gray-200">
-                              {desc}
-                            </p>
-                          ))}
+                          {experience.description.map((desc, i) => {
+                            if (experience.company === "Other Experiences" && desc.includes("**")) {
+                              // Parse the description with highlighted company names
+                              return (
+                                <p key={i} className="text-gray-800 dark:text-gray-200">
+                                  {desc.split("**").map((part, partIndex) => {
+                                    // Even indices are normal text, odd indices are company names to highlight
+                                    return partIndex % 2 === 1 ? (
+                                      <span key={partIndex} className="font-bold text-blue-700 dark:text-blue-300">
+                                        {part}
+                                      </span>
+                                    ) : (
+                                      part
+                                    );
+                                  })}
+                                </p>
+                              );
+                            } else {
+                              return (
+                                <p key={i} className="text-gray-800 dark:text-gray-200">
+                                  {desc}
+                                </p>
+                              );
+                            }
+                          })}
                         </div>
                         
                         {(experience.technologies && experience.technologies.length > 0) || experience.company === "IIT Dhanbad" ? (
