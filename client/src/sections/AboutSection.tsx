@@ -92,7 +92,7 @@ const AboutSection = ({
                 {/* Resume Download Section */}
                 <div className="mb-6 flex justify-center">
                   <a 
-                    href="/assets/resume.pdf" 
+                    href="/assets/SiddharthaMishra_SamsungResearch_IITDhn_Resume.pdf" 
                     download="SiddharthaMishra_Resume.pdf"
                     className="group"
                   >

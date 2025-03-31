@@ -33,7 +33,7 @@ const ExperienceSection = ({ experiences, isLoading }: ExperienceSectionProps) =
                   <div className="p-6">
                     <div className="flex flex-col sm:flex-row justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-blue-700 dark:text-blue-400 mb-1">{experience.company}</h3>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{experience.company}</h3>
                         <p className="text-blue-600 dark:text-blue-400 font-medium">{experience.title}</p>
                       </div>
                       <div className="flex items-center mt-2 sm:mt-0">
