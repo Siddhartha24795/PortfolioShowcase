@@ -119,7 +119,8 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
           description: [
             "**Guest Lecturer & Hackathon Judge** (Sept 2020 - Present): Mentoring competitive coding and data science programs.",
             "**Siemens Healthineers** (Intern, July 2019 - Feb 2020): Cholesterol prediction through eye images using ML and image processing.",
-            "**Wheelseye Technology** (Sept 2017 - Dec 2017): Developed APIs for live tracking and route optimization with ML."
+            "**Wheelseye Technology** (Sept 2017 - Dec 2017): Developed APIs for live tracking and route optimization with ML.",
+            "**Scrum Technology** (June 2016 - Aug 2017): Full Stack Development with ML. Technologies used: ML, Java, JavaScript, Jira, Agile Methodology"
           ],
           technologies: ["Agile Methodology", "Scrum", "JIRA", "Kanban", "Sprint Planning", "Product Backlog", "Retrospectives"],
         },

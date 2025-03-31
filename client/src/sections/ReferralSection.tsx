@@ -35,7 +35,9 @@ const FormInput = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<H
 const referralSchema = z.object({
   name: z.string().min(3, { message: "Full name is required (at least 3 characters)" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
-  phone: z.string().min(10, { message: "Phone number with country code is required" }),
+  countryCode: z.string().min(1, { message: "Country code is required" }),
+  phone: z.string().length(10, { message: "Phone number must be exactly 10 digits" })
+    .regex(/^\d{10}$/, { message: "Phone number must contain only digits" }),
   company: z.string().min(1, { message: "Target company name is required" }),
   position: z.string().min(1, { message: "Position/Role is required" }),
   resumeLink: z.string().url({ message: "Please provide a valid resume link" }),
@@ -56,6 +58,7 @@ const ReferralSection = () => {
     defaultValues: {
       name: "",
       email: "",
+      countryCode: "+91",
       phone: "",
       company: "",
       position: "",
@@ -151,17 +154,54 @@ const ReferralSection = () => {
                 
                 <FormField
                   control={form.control}
+                  name="countryCode"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Country Code</FormLabel>
+                      <select 
+                        {...field}
+                        className="w-full rounded-md border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500 p-2"
+                      >
+                        <option value="+91">India (+91)</option>
+                        <option value="+1">USA/Canada (+1)</option>
+                        <option value="+44">UK (+44)</option>
+                        <option value="+61">Australia (+61)</option>
+                        <option value="+86">China (+86)</option>
+                        <option value="+81">Japan (+81)</option>
+                        <option value="+49">Germany (+49)</option>
+                        <option value="+33">France (+33)</option>
+                        <option value="+65">Singapore (+65)</option>
+                        <option value="+971">UAE (+971)</option>
+                        <option value="+82">South Korea (+82)</option>
+                      </select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <FormField
+                  control={form.control}
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Phone Number</FormLabel>
+                      <FormLabel>Phone Number (10 digits)</FormLabel>
                       <FormControl>
                         <Input 
                           type="tel"
+                          placeholder="10-digit number without spaces or dashes"
                           {...field}
+                          maxLength={10}
+                          onChange={(e) => {
+                            // Only allow digits
+                            const value = e.target.value.replace(/\D/g, '');
+                            field.onChange(value);
+                          }}
                           className="border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500"
                         />
                       </FormControl>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                        Enter exactly 10 digits without country code (e.g., 9876543210)
+                      </p>
                       <FormMessage />
                     </FormItem>
                   )}

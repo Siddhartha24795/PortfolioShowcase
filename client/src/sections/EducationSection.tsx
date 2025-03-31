@@ -1,6 +1,6 @@
 import { Education } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGraduationCap } from "react-icons/fa";
 
 interface EducationSectionProps {
   education: Education[];
@@ -35,7 +35,9 @@ const EducationSection = ({ education, isLoading }: EducationSectionProps) => {
               <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-blue-200 dark:border-blue-700 hover:shadow-lg transition-shadow duration-300">
                 <div className={`${index < 2 ? 'bg-gradient-to-r from-blue-600 to-blue-500' : 'bg-gradient-to-r from-blue-500 to-blue-400'} text-white p-5`}>
                   <h3 className="text-xl font-bold flex items-center">
-                    <span className="bg-white text-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3 shadow-md">{index + 1}</span>
+                    <span className="bg-white text-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3 shadow-md">
+                      <FaGraduationCap className="text-lg" />
+                    </span>
                     {edu.degree}
                   </h3>
                   <p className="opacity-90 ml-11">{edu.field}</p>
@@ -55,7 +57,7 @@ const EducationSection = ({ education, isLoading }: EducationSectionProps) => {
                         <span key={idx}>
                           {idx > 0 && <span>,&nbsp;</span>}
                           {isRamanujanOlympiad ? (
-                            <span className="text-indigo-800 dark:text-indigo-300 font-semibold">
+                            <span className="bg-indigo-800 dark:bg-indigo-700 text-white font-semibold px-2 py-1 rounded">
                               {part.trim()}
                             </span>
                           ) : (
