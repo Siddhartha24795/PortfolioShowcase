@@ -285,7 +285,7 @@ const ReferralSection = () => {
               
               <Button 
                 type="submit" 
-                className="w-full px-6 py-3 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors shadow-md"
+                className="w-full px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors shadow-md dark:bg-blue-500 dark:hover:bg-blue-600 dark:text-white text-lg"
                 disabled={referralMutation.isPending}
               >
                 {referralMutation.isPending ? "Submitting..." : "Submit Referral Request"}

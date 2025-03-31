@@ -48,7 +48,7 @@ const Sidebar = ({ resumeData, profileImage, visitorCount }: SidebarProps) => {
             {resumeData.name || 'Loading...'} 
             <img src="/assets/indian-flag.svg" alt="Indian Flag" className="w-5 h-4 ml-2" />
           </h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400 text-center">{resumeData.currentRole || 'Loading...'}</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 text-center">Staff Computer Vision Researcher (GenAI Team)</p>
           <div className="flex justify-center space-x-3 mt-3">
             {resumeData.socialLinks?.map((link, index) => (
               <a 

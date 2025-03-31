@@ -1,5 +1,5 @@
 import { ContactDetails, SocialLink } from "@/types";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedinIn, FaMediumM, FaCode } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedinIn, FaMediumM, FaCode, FaUser } from "react-icons/fa";
 import { Github, Linkedin, PenSquare, Code, Mail, Phone, MapPin } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -79,57 +79,78 @@ const AboutSection = ({
               <>
                 <h3 className="text-xl font-semibold mb-4 text-primary-600 dark:text-primary-400">Who I Am</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  I am a {name}, specializing in Augmented Reality and Generative AI technologies. With a Master's degree in Artificial Intelligence from IIT Dhanbad, I bring a strong academic foundation to my professional work.
+                  I am {name}, an AI researcher with <span className="font-semibold text-blue-700 dark:text-blue-300">9+ years of experience</span>, specializing in <span className="font-semibold text-blue-700 dark:text-blue-300">Generative AI</span>, <span className="font-semibold text-blue-700 dark:text-blue-300">LLMs</span>, <span className="font-semibold text-blue-700 dark:text-blue-300">Diffusion Models</span>, <span className="font-semibold text-blue-700 dark:text-blue-300">GANs</span>, and <span className="font-semibold text-blue-700 dark:text-blue-300">Agentic AI</span>. Since 2018, I've worked across <span className="font-semibold text-blue-700 dark:text-blue-300">GANs</span> to <span className="font-semibold text-blue-700 dark:text-blue-300">LLM</span>-driven autonomous AI, optimizing on-device deployment with quantization, pruning, and distillation.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  {bio}
+                  Leading the <span className="font-semibold text-blue-700 dark:text-blue-300">GenAI team</span>, I focus on real-time generative image dynamics, enabling seamless interactions on mobile and embedded devices. Experienced in <span className="font-semibold text-blue-700 dark:text-blue-300">TFLite</span>, <span className="font-semibold text-blue-700 dark:text-blue-300">PyTorch Lite</span>, GStreamer, OpenGL, and <span className="font-semibold text-blue-700 dark:text-blue-300">LLM</span>-based applications with <span className="font-semibold text-blue-700 dark:text-blue-300">RAG</span>, vector databases, and multimodal AI.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 mb-6">
-                  Throughout my career, I've led development teams, mentored junior engineers, and contributed to cutting-edge research in AI and AR. I'm passionate about bridging the gap between theoretical AI advancements and practical applications that enhance user experiences.
+                  Passionate about Vibe Coding—blending creativity and engineering for immersive <span className="font-semibold text-blue-700 dark:text-blue-300">AI experiences</span>. With a Master's degree in Artificial Intelligence from IIT Dhanbad, I bridge the gap between theoretical AI advancements and practical applications that enhance user experiences.
                 </p>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white mb-4 text-lg">Contact Details</h4>
-                    <ul className="space-y-4">
-                      <li className="flex items-start">
-                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0 mt-1">
-                          <Mail className="text-blue-600 dark:text-blue-400 w-5 h-5" />
+                <div className="border border-blue-200 dark:border-blue-800 rounded-lg p-6 bg-blue-50 dark:bg-blue-900/20 shadow-md">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium text-gray-900 dark:text-white mb-4 text-lg flex items-center">
+                        <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 flex items-center justify-center mr-2 border border-blue-200 dark:border-blue-700">
+                          <FaUser className="w-4 h-4" />
                         </div>
-                        <span className="ml-3 text-gray-700 dark:text-gray-300 break-all">{contactDetails.email}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0 mt-1">
-                          <Phone className="text-blue-600 dark:text-blue-400 w-5 h-5" />
+                        Contact Details
+                      </h4>
+                      <ul className="space-y-4">
+                        <li className="flex items-start">
+                          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 mt-1 border border-blue-200 dark:border-blue-700">
+                            <Mail className="text-blue-600 dark:text-blue-400 w-5 h-5" />
+                          </div>
+                          <span className="ml-3 text-gray-700 dark:text-gray-300 break-all pt-2">{contactDetails.email}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 mt-1 border border-blue-200 dark:border-blue-700">
+                            <Phone className="text-blue-600 dark:text-blue-400 w-5 h-5" />
+                          </div>
+                          <span className="ml-3 text-gray-700 dark:text-gray-300 pt-2">{contactDetails.phone}</span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 mt-1 border border-blue-200 dark:border-blue-700">
+                            <MapPin className="text-blue-600 dark:text-blue-400 w-5 h-5" />
+                          </div>
+                          <span className="ml-3 text-gray-700 dark:text-gray-300 pt-2">{contactDetails.location}</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="flex flex-col justify-center">
+                      <h4 className="font-medium text-gray-900 dark:text-white mb-4 text-lg flex items-center">
+                        <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 flex items-center justify-center mr-2 border border-blue-200 dark:border-blue-700">
+                          <Linkedin className="w-4 h-4" />
                         </div>
-                        <span className="ml-3 text-gray-700 dark:text-gray-300">{contactDetails.phone}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0 mt-1">
-                          <MapPin className="text-blue-600 dark:text-blue-400 w-5 h-5" />
-                        </div>
-                        <span className="ml-3 text-gray-700 dark:text-gray-300 mt-2">{contactDetails.location}</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white mb-4 text-lg">Connect</h4>
-                    <div className="flex space-x-3">
-                      {socialLinks.map((link, index) => (
-                        <a 
-                          key={index}
-                          href={link.url} 
-                          className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title={link.name}
-                        >
-                          {link.icon === 'github' && <Github size={20} />}
-                          {link.icon === 'linkedin' && <Linkedin size={20} />}
-                          {link.icon === 'pen-square' && <PenSquare size={20} />}
-                          {link.icon === 'code' && <Code size={20} />}
-                        </a>
-                      ))}
+                        Connect
+                      </h4>
+                      <div className="flex flex-wrap gap-3">
+                        {socialLinks.map((link, index) => {
+                          let url = link.url;
+                          if (link.icon === 'github') {
+                            url = "https://github.com/Siddhartha24795";
+                          }
+                          if (link.icon === 'code') {
+                            url = "https://www.geeksforgeeks.org/user/siddharthamishra/";
+                          }
+                          return (
+                            <a 
+                              key={index}
+                              href={url} 
+                              className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors border border-blue-200 dark:border-blue-700"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              title={link.name}
+                            >
+                              {link.icon === 'github' && <Github size={20} />}
+                              {link.icon === 'linkedin' && <Linkedin size={20} />}
+                              {link.icon === 'pen-square' && <PenSquare size={20} />}
+                              {link.icon === 'code' && <Code size={20} />}
+                            </a>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>

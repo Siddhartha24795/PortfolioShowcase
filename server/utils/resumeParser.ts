@@ -37,7 +37,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
     // Return the extracted data
     return {
       name: "Siddhartha Mishra",
-      currentRole: "Staff Computer Vision Researcher (AR Core Team)",
+      currentRole: "Staff Computer Vision Researcher (GenAI Team)",
       bio: "MS in Artificial Intelligence from IIT Dhanbad, currently working at Samsung Research on AR and Generative Image Dynamics. Expert in Computer Vision, Deep Learning, and AR technologies.",
       contactDetails: {
         email: "siddharthamishra24795@gmail.com",
@@ -45,10 +45,10 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
         location: "Noida, India",
       },
       socialLinks: [
-        { name: "GitHub", icon: "github", url: "https://github.com/siddhartha-mishra" },
+        { name: "GitHub", icon: "github", url: "https://github.com/Siddhartha24795" },
         { name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/siddhartha-mishra/" },
         { name: "Medium", icon: "pen-square", url: "https://medium.com/@siddharthamishra" },
-        { name: "LeetCode", icon: "code", url: "https://leetcode.com/u/Siddhartha24795/" },
+        { name: "GeeksforGeeks", icon: "code", url: "https://www.geeksforgeeks.org/user/siddharthamishra/" },
       ],
       education: [
         {
@@ -84,7 +84,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
       workExperience: [
         {
           company: "Samsung Research",
-          title: "Staff Computer Vision Researcher (AR Core Team)",
+          title: "Staff Computer Vision Researcher (GenAI Team)",
           date: "Sep 2023 - Present",
           description: [
             "Working on 'Generative Image dynamics' - generating seamlessly looping videos from single images. Reduced processing time from 17 seconds to 3 seconds.",
@@ -257,7 +257,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
       codingProfiles: [
         {
           name: "GitHub",
-          link: "https://github.com/siddhartha-mishra",
+          link: "https://github.com/Siddhartha24795",
           stats: [
             { label: "Repositories", value: "24" },
             { label: "Contributions", value: "156" },
@@ -275,7 +275,7 @@ export async function parseResumeFromPDF(): Promise<ResumeData> {
         },
         {
           name: "GeeksforGeeks",
-          link: "https://geeksforgeeks.org/user/siddhartha-mishra",
+          link: "https://www.geeksforgeeks.org/user/siddharthamishra/",
           stats: [
             { label: "Problems Solved", value: "450+" },
             { label: "Rank", value: "Expert", highlight: true },
