@@ -92,15 +92,16 @@ const AboutSection = ({
                 {/* Resume Download Section */}
                 <div className="mb-6 flex justify-center">
                   <a 
-                    href="/assets/SiddharthaMishra_SamsungResearch_IITDhn_Resume.pdf" 
-                    download="SiddharthaMishra_Resume.pdf"
+                    href="https://drive.google.com/file/d/1op7FZDXahNzjQku0S1SDkwhNtSwJx7BW/view?usp=sharing" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group"
                   >
                     <Button
                       className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow-md flex items-center gap-2 transition-all transform hover:scale-105 dark:bg-blue-700 dark:hover:bg-blue-800"
                     >
                       <FileText className="w-5 h-5 group-hover:animate-pulse" />
-                      <span>Download Resume</span>
+                      <span>View Resume</span>
                       <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
                     </Button>
                   </a>

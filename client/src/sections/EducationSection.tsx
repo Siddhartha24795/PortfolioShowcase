@@ -46,7 +46,36 @@ const EducationSection = ({ education, isLoading }: EducationSectionProps) => {
                     <div className="text-sm font-medium bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 px-3 py-1 rounded-full">{edu.years}</div>
                   </div>
                   <p className="text-gray-800 dark:text-gray-200 mb-4 border-l-4 border-blue-300 dark:border-blue-700 pl-3 py-1">
-                    {edu.description}
+                    {/* Split description by commas and highlight certain achievements */}
+                    {edu.description.split(',').map((part, idx) => {
+                      // Check if part contains achievement keywords
+                      const isAchievement = 
+                        part.includes("Olympiad") || 
+                        part.includes("Rank") || 
+                        part.includes("CGPA") || 
+                        part.includes("Scholarship") || 
+                        part.includes("Award") ||
+                        part.includes("Merit");
+                      
+                      const colors = [
+                        "text-indigo-800 dark:text-indigo-300 font-semibold",
+                        "text-purple-800 dark:text-purple-300 font-semibold",
+                        "text-emerald-800 dark:text-emerald-300 font-semibold"
+                      ];
+                      
+                      return (
+                        <span key={idx}>
+                          {idx > 0 && <span>,&nbsp;</span>}
+                          {isAchievement ? (
+                            <span className={colors[idx % colors.length]}>
+                              {part.trim()}
+                            </span>
+                          ) : (
+                            part.trim()
+                          )}
+                        </span>
+                      );
+                    })}
                   </p>
                   {edu.link && (
                     <a 
