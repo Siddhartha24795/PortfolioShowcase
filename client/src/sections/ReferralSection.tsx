@@ -50,6 +50,9 @@ const referralSchema = z.object({
 
 type ReferralFormValues = z.infer<typeof referralSchema>;
 
+// Create a type without the consent field for submission
+type ReferralSubmissionData = Omit<ReferralFormValues, 'consent'>;
+
 const ReferralSection = () => {
   const { toast } = useToast();
   
@@ -70,12 +73,8 @@ const ReferralSection = () => {
   });
   
   const referralMutation = useMutation({
-    mutationFn: async (data: ReferralFormValues) => {
-      const response = await apiRequest("POST", "/api/referrals", JSON.stringify(data), {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+    mutationFn: async (data: ReferralSubmissionData) => {
+      const response = await apiRequest("POST", "/api/referrals", data);
       return response.json();
     },
     onSuccess: () => {
@@ -98,7 +97,7 @@ const ReferralSection = () => {
   const onSubmit = (data: ReferralFormValues) => {
     // Remove consent field as it's not needed in the backend
     const { consent, ...submissionData } = data;
-    referralMutation.mutate(submissionData);
+    referralMutation.mutate(submissionData as ReferralSubmissionData);
   };
 
   return (
