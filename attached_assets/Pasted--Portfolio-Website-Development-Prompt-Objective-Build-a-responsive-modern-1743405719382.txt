@@ -1,0 +1,59 @@
+### **Portfolio Website Development Prompt**  
+
+#### **Objective**  
+Build a **responsive, modern portfolio website** that:  
+1. **Automatically fetches and displays** my professional details from my **PDF resume** and **LinkedIn profile**.  
+2. **Dynamically integrates** my profile picture from LinkedIn and key online profiles (GitHub, Medium, LeetCode, etc.).  
+3. **Includes interactive sections** (Education, Experience, Projects, Skills, Blogs, Coding Stats).  
+4. **Features a visitor counter** and a **referral form with PDF upload** (submissions sent to `siddhartha24795@gmail.com`).  
+
+---
+
+### **Technical Implementation (Frameworks & Tools)**  
+
+#### **1. Core Framework**  
+- **Frontend**: **React.js** (with Vite for fast bundling).  
+- **Styling**: **TailwindCSS** (for responsive, utility-first design).  
+
+#### **2. Data Integration**  
+- **PDF Parsing**: Use a library like `pdf-lib` or manual extraction to parse education, experience, and skills.  
+- **LinkedIn Sync**:  
+  - **Option 1**: LinkedIn API (OAuth) for dynamic profile picture and bio.  
+  - **Option 2**: Manual entry (if API access is restricted).  
+- **Profile Links**:  
+  - Display icons using **React Icons** (GitHub, LinkedIn, Medium, LeetCode).  
+
+#### **3. Website Sections**  
+- **Hero Section**: Profile picture (from LinkedIn), name, role, short bio, and social links.  
+- **About Me**: Brief introduction + skills (from resume).  
+- **Education & Experience**: Timeline/card-based layout (data from resume).  
+- **Projects**: Grid/carousel layout with GitHub/Medium links.  
+- **Blogs**: Embedded Medium articles (via RSS or manual links).  
+- **Coding Profiles**: LeetCode/GeeksforGeeks stats (scraped or manual).  
+
+#### **4. Functional Features**  
+- **Visitor Counter**:  
+  - **Backend**: Firebase Realtime Database or a simple Node.js counter API.  
+  - **Frontend**: Display live count (updated on page load).  
+- **Referral Form**:  
+  - **Fields**: Name, Email, Job Link, Message, Resume (PDF upload).  
+  - **Backend Handling**:  
+    - **File Upload**: Firebase Storage or a Node.js server with `Multer`.  
+    - **Email Notifications**: Send form data + PDF link via **EmailJS** or Nodemailer.  
+
+#### **5. Deployment**  
+- **Frontend**: Host on **your own platform/Vercel/Netlify** (static React app).  
+- **Backend (if needed)**: your own platform/ Firebase Functions or **Heroku** (for form processing).  
+
+---
+ 
+
+---
+
+### **Next Steps**  
+1. **Provide**:  
+   - Your **PDF resume** (for parsing).  
+   - Preferred **color scheme** (or use a default modern theme).  
+2. **Confirm**:  
+   - Should LinkedIn data sync be **automatic (API)** or **manual**?  Automatic 
+   - Do you want **dark/light mode toggle**?  Yes 
