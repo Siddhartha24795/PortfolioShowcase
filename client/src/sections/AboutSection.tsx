@@ -1,6 +1,7 @@
 import { ContactDetails, SocialLink } from "@/types";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedinIn, FaMediumM, FaCode, FaUser } from "react-icons/fa";
-import { Github, Linkedin, PenSquare, Code, Mail, Phone, MapPin } from "lucide-react";
+import { FaUser } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { Globe, Github, Linkedin, PenSquare, Code, Mail, Phone, MapPin, Link } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface AboutSectionProps {
@@ -77,14 +78,13 @@ const AboutSection = ({
               </>
             ) : (
               <>
-                <h3 className="text-xl font-semibold mb-4 text-primary-600 dark:text-primary-400">Who I Am</h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 text-justify">
                   I am {name}, an AI researcher with <span className="font-semibold text-blue-700 dark:text-blue-300">9+ years of experience</span>, specializing in <span className="font-semibold text-blue-700 dark:text-blue-300">Generative AI</span>, <span className="font-semibold text-blue-700 dark:text-blue-300">LLMs</span>, <span className="font-semibold text-blue-700 dark:text-blue-300">Diffusion Models</span>, <span className="font-semibold text-blue-700 dark:text-blue-300">GANs</span>, and <span className="font-semibold text-blue-700 dark:text-blue-300">Agentic AI</span>. Since 2018, I've worked across <span className="font-semibold text-blue-700 dark:text-blue-300">GANs</span> to <span className="font-semibold text-blue-700 dark:text-blue-300">LLM</span>-driven autonomous AI, optimizing on-device deployment with quantization, pruning, and distillation.
                 </p>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 text-justify">
                   Leading the <span className="font-semibold text-blue-700 dark:text-blue-300">GenAI team</span>, I focus on real-time generative image dynamics, enabling seamless interactions on mobile and embedded devices. Experienced in <span className="font-semibold text-blue-700 dark:text-blue-300">TFLite</span>, <span className="font-semibold text-blue-700 dark:text-blue-300">PyTorch Lite</span>, GStreamer, OpenGL, and <span className="font-semibold text-blue-700 dark:text-blue-300">LLM</span>-based applications with <span className="font-semibold text-blue-700 dark:text-blue-300">RAG</span>, vector databases, and multimodal AI.
                 </p>
-                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-gray-700 dark:text-gray-300 mb-6 text-justify">
                   Passionate about Vibe Coding—blending creativity and engineering for immersive <span className="font-semibold text-blue-700 dark:text-blue-300">AI experiences</span>. With a Master's degree in Artificial Intelligence from IIT Dhanbad, I bridge the gap between theoretical AI advancements and practical applications that enhance user experiences.
                 </p>
                 
@@ -121,7 +121,7 @@ const AboutSection = ({
                     <div className="flex flex-col justify-center">
                       <h4 className="font-medium text-gray-900 dark:text-white mb-4 text-lg flex items-center">
                         <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 flex items-center justify-center mr-2 border border-blue-200 dark:border-blue-700">
-                          <Linkedin className="w-4 h-4" />
+                          <Globe className="w-4 h-4" />
                         </div>
                         Connect
                       </h4>
@@ -150,6 +150,15 @@ const AboutSection = ({
                             </a>
                           );
                         })}
+                        <a 
+                          href="https://leetcode.com/u/Siddhartha24795/" 
+                          className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors border border-blue-200 dark:border-blue-700"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="LeetCode"
+                        >
+                          <SiLeetcode size={20} />
+                        </a>
                       </div>
                     </div>
                   </div>

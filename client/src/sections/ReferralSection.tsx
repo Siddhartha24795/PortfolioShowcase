@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -18,6 +18,20 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
+
+// Custom form input component with blue border and sky blue focus state
+const FormInput = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
+  (props, ref) => {
+    return (
+      <Input
+        className="border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500"
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
 
 const referralSchema = z.object({
   name: z.string().min(3, { message: "Name must be at least 3 characters" }),
@@ -147,7 +161,10 @@ const ReferralSection = () => {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input 
+                          {...field}
+                          className="border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -161,7 +178,11 @@ const ReferralSection = () => {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" {...field} />
+                        <Input 
+                          type="email"
+                          {...field}
+                          className="border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -175,7 +196,11 @@ const ReferralSection = () => {
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input type="tel" {...field} />
+                        <Input 
+                          type="tel"
+                          {...field}
+                          className="border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -189,7 +214,10 @@ const ReferralSection = () => {
                     <FormItem>
                       <FormLabel>Target Company</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input 
+                          {...field}
+                          className="border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -203,7 +231,10 @@ const ReferralSection = () => {
                     <FormItem>
                       <FormLabel>Position/Role</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input 
+                          {...field}
+                          className="border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -217,7 +248,11 @@ const ReferralSection = () => {
                     <FormItem>
                       <FormLabel>Job Link (if available)</FormLabel>
                       <FormControl>
-                        <Input type="url" {...field} />
+                        <Input 
+                          type="url"
+                          {...field}
+                          className="border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -232,7 +267,11 @@ const ReferralSection = () => {
                   <FormItem>
                     <FormLabel>Message (Optional)</FormLabel>
                     <FormControl>
-                      <Textarea rows={4} {...field} />
+                      <Textarea 
+                        rows={4} 
+                        {...field} 
+                        className="border-blue-300 dark:border-blue-600 bg-white dark:bg-gray-800 focus:border-sky-400 focus:ring focus:ring-sky-200 dark:focus:ring-sky-800 dark:focus:border-sky-500" 
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -242,13 +281,13 @@ const ReferralSection = () => {
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Upload Resume</label>
                 <div className="flex items-center justify-center w-full">
-                  <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
+                  <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-blue-300 dark:border-blue-600 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors">
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                      <FaCloudUploadAlt className="text-gray-500 dark:text-gray-400 text-3xl mb-2" />
-                      <p className="mb-1 text-sm text-gray-500 dark:text-gray-400" id="file-name-display">
+                      <FaCloudUploadAlt className="text-blue-500 dark:text-blue-400 text-3xl mb-2" />
+                      <p className="mb-1 text-sm text-blue-600 dark:text-blue-400" id="file-name-display">
                         {resumeFile ? resumeFile.name : "PDF files only (max 5MB)"}
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">Drag and drop or click to upload</p>
+                      <p className="text-xs text-blue-500 dark:text-blue-400">Drag and drop or click to upload</p>
                     </div>
                     <input 
                       id="resume" 

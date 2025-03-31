@@ -15,8 +15,16 @@ const ExperienceSection = ({ experiences, isLoading }: ExperienceSectionProps) =
         <h2 className="text-3xl font-bold mb-8 text-center">Work Experience</h2>
         
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 ml-4 md:-ml-0.5 w-1 h-full bg-blue-300 dark:bg-blue-700"></div>
+          {/* Timeline Line with breakpoints */}
+          <div className="absolute left-0 md:left-1/2 ml-4 md:-ml-0.5 w-1 h-full bg-blue-300 dark:bg-blue-700 flex flex-col items-center">
+            {!isLoading && experiences.map((_, index) => (
+              <div 
+                key={index} 
+                className="absolute w-3 h-3 rounded-full bg-blue-500 dark:bg-blue-400" 
+                style={{ top: `${(index * 100 / experiences.length) + (index === 0 ? 5 : 0)}%` }}
+              />
+            ))}
+          </div>
           
           {/* Timeline Items */}
           {isLoading ? (
