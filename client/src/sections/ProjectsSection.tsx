@@ -1,6 +1,7 @@
 import { Project } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -38,51 +39,54 @@ const ProjectsSection = ({ projects, isLoading }: ProjectsSectionProps) => {
           ) : (
             // Actual projects
             projects.map((project, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-                <div className="h-48 overflow-hidden">
+              <div key={index} className="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg border border-gray-100 dark:border-gray-600">
+                <div className="h-48 overflow-hidden relative">
                   {project.image ? (
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover"
-                    />
+                    <>
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    </>
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-gray-400 text-lg">{project.title}</span>
+                    <div className="w-full h-full bg-gradient-to-br from-primary-100 to-primary-300 dark:from-primary-900 dark:to-primary-700 flex items-center justify-center p-6">
+                      <span className="text-primary-800 dark:text-primary-100 text-xl font-bold">{project.title}</span>
                     </div>
                   )}
                 </div>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 text-sm mb-4">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{project.title}</h3>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-5">
                     {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="inline-block px-2 py-1 text-xs font-medium rounded-md bg-primary-100 dark:bg-primary-800 text-primary-800 dark:text-primary-200">
+                      <Badge key={techIndex} variant="outline" className="bg-primary-50 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 border-primary-200 dark:border-primary-700">
                         {tech}
-                      </span>
+                      </Badge>
                     ))}
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between pt-3 border-t border-gray-100 dark:border-gray-600">
                     {project.demoLink && (
                       <a 
                         href={project.demoLink} 
-                        className="text-primary-600 dark:text-primary-400 hover:underline text-sm flex items-center"
+                        className="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-medium text-sm flex items-center transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        View Demo <FaExternalLinkAlt className="ml-1 text-xs" />
+                        View Demo <ExternalLink className="ml-1 w-3 h-3" />
                       </a>
                     )}
                     {project.repoLink && (
                       <a 
                         href={project.repoLink} 
-                        className="text-primary-600 dark:text-primary-400 hover:underline text-sm flex items-center"
+                        className="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-medium text-sm flex items-center transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <FaGithub className="mr-1" /> Repository
+                        <Github className="mr-1 w-4 h-4" /> Repository
                       </a>
                     )}
                   </div>
@@ -95,11 +99,11 @@ const ProjectsSection = ({ projects, isLoading }: ProjectsSectionProps) => {
         <div className="mt-10 text-center">
           <a 
             href="https://github.com/siddhartha-mishra" 
-            className="inline-flex items-center px-5 py-2 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors shadow-md"
+            className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors shadow-md"
             target="_blank"
             rel="noopener noreferrer"
           >
-            View All Projects <i className="fas fa-arrow-right ml-2"></i>
+            View All Projects <ArrowRight className="ml-2 w-4 h-4" />
           </a>
         </div>
       </div>

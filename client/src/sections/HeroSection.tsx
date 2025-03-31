@@ -36,8 +36,9 @@ const HeroSection = ({ name, role, bio, stats, isLoading }: HeroSectionProps) =>
               </>
             ) : (
               <>
-                <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4 flex items-center">
                   {name}
+                  <img src="/assets/indian-flag.svg" alt="Indian Flag" className="w-8 h-6 ml-3" />
                 </h1>
                 <h2 className="text-2xl lg:text-3xl font-light mb-6">
                   {role}

@@ -1,5 +1,6 @@
 import { ContactDetails, SocialLink } from "@/types";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedinIn, FaMediumM } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedinIn, FaMediumM, FaCode } from "react-icons/fa";
+import { Github, Linkedin, PenSquare, Code, Mail, Phone, MapPin } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface AboutSectionProps {
@@ -89,34 +90,44 @@ const AboutSection = ({
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white mb-2">Contact Details</h4>
-                    <ul className="space-y-2 text-sm">
-                      <li className="flex items-start">
-                        <FaEnvelope className="mt-1 text-primary w-5" />
-                        <span className="ml-2 text-gray-700 dark:text-gray-300">{contactDetails.email}</span>
+                    <h4 className="font-medium text-gray-900 dark:text-white mb-4 text-lg">Contact Details</h4>
+                    <ul className="space-y-4">
+                      <li className="flex items-center">
+                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                          <Mail className="text-primary dark:text-primary-400 w-5 h-5" />
+                        </div>
+                        <span className="ml-3 text-gray-700 dark:text-gray-300">{contactDetails.email}</span>
                       </li>
-                      <li className="flex items-start">
-                        <FaPhone className="mt-1 text-primary w-5" />
-                        <span className="ml-2 text-gray-700 dark:text-gray-300">{contactDetails.phone}</span>
+                      <li className="flex items-center">
+                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                          <Phone className="text-primary dark:text-primary-400 w-5 h-5" />
+                        </div>
+                        <span className="ml-3 text-gray-700 dark:text-gray-300">{contactDetails.phone}</span>
                       </li>
-                      <li className="flex items-start">
-                        <FaMapMarkerAlt className="mt-1 text-primary w-5" />
-                        <span className="ml-2 text-gray-700 dark:text-gray-300">{contactDetails.location}</span>
+                      <li className="flex items-center">
+                        <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                          <MapPin className="text-primary dark:text-primary-400 w-5 h-5" />
+                        </div>
+                        <span className="ml-3 text-gray-700 dark:text-gray-300">{contactDetails.location}</span>
                       </li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white mb-2">Connect</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white mb-4 text-lg">Connect</h4>
                     <div className="flex space-x-3">
                       {socialLinks.map((link, index) => (
                         <a 
                           key={index}
                           href={link.url} 
-                          className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                          className="flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 text-primary dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors icon-dark-visible"
                           target="_blank"
                           rel="noopener noreferrer"
+                          title={link.name}
                         >
-                          <i className={`fab ${link.icon}`}></i>
+                          {link.icon === 'github' && <Github size={20} />}
+                          {link.icon === 'linkedin' && <Linkedin size={20} />}
+                          {link.icon === 'pen-square' && <PenSquare size={20} />}
+                          {link.icon === 'code' && <Code size={20} />}
                         </a>
                       ))}
                     </div>
