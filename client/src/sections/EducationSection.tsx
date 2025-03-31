@@ -49,7 +49,7 @@ const EducationSection = ({ education, isLoading }: EducationSectionProps) => {
                     <div className="text-sm font-medium bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 px-3 py-1 rounded-full">{edu.years}</div>
                   </div>
                   <p className="text-gray-800 dark:text-gray-200 mb-4 border-l-4 border-blue-300 dark:border-blue-700 pl-3 py-1">
-                    {/* Highlight only the words "Ramanujan Mathematics Olympiad" */}
+                    {/* Only change text color of "Ramanujan Mathematics Olympiad" */}
                     {edu.description.split('Ramanujan Mathematics Olympiad').map((part, idx, arr) => {
                       // If it's the last part or there's only one part
                       if (idx === arr.length - 1) {
@@ -57,12 +57,12 @@ const EducationSection = ({ education, isLoading }: EducationSectionProps) => {
                       }
                       // Otherwise, it's a part that's followed by "Ramanujan Mathematics Olympiad"
                       return (
-                        <React.Fragment key={idx}>
+                        <span key={`part-${idx}`}>
                           {part}
-                          <span className="bg-indigo-800 dark:bg-indigo-700 text-white font-semibold px-2 py-1 rounded">
+                          <span className="text-blue-600 dark:text-blue-400 font-semibold">
                             Ramanujan Mathematics Olympiad
                           </span>
-                        </React.Fragment>
+                        </span>
                       );
                     })}
                   </p>

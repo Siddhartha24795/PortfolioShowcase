@@ -130,7 +130,7 @@ const ExperienceSection = ({ experiences, isLoading }: ExperienceSectionProps) =
                                   </span>
                                 ))
                               ) : experience.company === "Other Experiences" ? (
-                                ["ML", "Java", "JavaScript", "C++", "Jira", "Agile Methodology"].map((tech, i) => (
+                                ["Machine Learning", "Java", "JavaScript", "C++", "ML", "Jira", "Agile Methodology"].map((tech, i) => (
                                   <span key={i} className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 border border-blue-200 dark:border-blue-700">
                                     {tech}
                                   </span>
