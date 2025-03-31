@@ -6,15 +6,10 @@ export const referralController = {
   // Submit a referral request
   submitReferral: async (req: Request, res: Response) => {
     try {
-      // Check if resume file was uploaded
-      if (!req.file) {
-        return res.status(400).json({ message: "Resume file is required" });
-      }
-      
-      const { name, email, phone, company, position, jobLink, message } = req.body;
+      const { name, email, phone, company, position, jobLink, message, resumeLink, countryCode } = req.body;
       
       // Basic validation
-      if (!name || !email || !company || !position) {
+      if (!name || !email || !company || !position || !resumeLink) {
         return res.status(400).json({ message: "Missing required fields" });
       }
       
@@ -22,13 +17,12 @@ export const referralController = {
       const referral = await storage.createReferral({
         name,
         email,
-        phone: phone || "",
+        phone: phone ? `${countryCode || '+91'} ${phone}` : "",
         company,
         position,
         jobLink: jobLink || "",
         message: message || "",
-        resumeFilename: req.file.originalname,
-        resumeData: req.file.buffer,
+        resumeLink,
         submittedAt: new Date(),
       });
       
@@ -36,13 +30,12 @@ export const referralController = {
       await sendReferralEmail({
         name,
         email,
-        phone: phone || "Not provided",
+        phone: phone ? `${countryCode || '+91'} ${phone}` : "Not provided",
         company,
         position,
         jobLink: jobLink || "Not provided",
         message: message || "No message provided",
-        resumeFileName: req.file.originalname,
-        resumeBuffer: req.file.buffer,
+        resumeLink,
       });
       
       res.status(201).json({

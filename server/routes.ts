@@ -51,7 +51,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
   // Referral form submission
-  app.post("/api/referrals", upload.single("resume"), referralController.submitReferral);
+  app.post("/api/referrals", referralController.submitReferral);
 
   const httpServer = createServer(app);
 

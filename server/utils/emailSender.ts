@@ -8,8 +8,7 @@ interface ReferralEmailData {
   position: string;
   jobLink: string;
   message: string;
-  resumeFileName: string;
-  resumeBuffer: Buffer;
+  resumeLink: string;
 }
 
 export async function sendReferralEmail(data: ReferralEmailData): Promise<void> {
@@ -46,7 +45,8 @@ export async function sendReferralEmail(data: ReferralEmailData): Promise<void> 
     <h3>Message:</h3>
     <p>${data.message.replace(/\n/g, '<br>')}</p>
     
-    <p>The candidate's resume is attached to this email.</p>
+    <h3>Resume Link:</h3>
+    <p><a href="${data.resumeLink}" target="_blank">${data.resumeLink}</a></p>
   `;
 
   // Send mail with defined transport object
@@ -55,13 +55,7 @@ export async function sendReferralEmail(data: ReferralEmailData): Promise<void> 
       from: `"Portfolio Website" <${process.env.EMAIL_USER || 'noreply@example.com'}>`,
       to: 'siddhartha24795@gmail.com',
       subject: `New Referral Request: ${data.name} for ${data.position} at ${data.company}`,
-      html: htmlBody,
-      attachments: [
-        {
-          filename: data.resumeFileName,
-          content: data.resumeBuffer,
-        },
-      ],
+      html: htmlBody
     });
 
     console.log('Email sent: %s', info.messageId);

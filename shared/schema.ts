@@ -1,4 +1,4 @@
-import { pgTable, text, serial, integer, boolean, timestamp, bytea } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, boolean, timestamp } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -37,8 +37,7 @@ export const referrals = pgTable("referrals", {
   position: text("position").notNull(),
   jobLink: text("job_link"),
   message: text("message"),
-  resumeFilename: text("resume_filename").notNull(),
-  resumeData: bytea("resume_data").notNull(),
+  resumeLink: text("resume_link").notNull(),
   submittedAt: timestamp("submitted_at").notNull().defaultNow(),
   processed: boolean("processed").notNull().default(false),
 });

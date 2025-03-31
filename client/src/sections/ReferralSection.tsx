@@ -70,8 +70,12 @@ const ReferralSection = () => {
   });
   
   const referralMutation = useMutation({
-    mutationFn: async (data: FormData) => {
-      const response = await apiRequest("POST", "/api/referrals", data);
+    mutationFn: async (data: ReferralFormValues) => {
+      const response = await apiRequest("POST", "/api/referrals", JSON.stringify(data), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
       return response.json();
     },
     onSuccess: () => {
@@ -92,16 +96,9 @@ const ReferralSection = () => {
   });
   
   const onSubmit = (data: ReferralFormValues) => {
-    const formData = new FormData();
-    
-    // Append form fields
-    Object.entries(data).forEach(([key, value]) => {
-      if (value !== undefined && key !== 'consent') {
-        formData.append(key, value.toString());
-      }
-    });
-    
-    referralMutation.mutate(formData);
+    // Remove consent field as it's not needed in the backend
+    const { consent, ...submissionData } = data;
+    referralMutation.mutate(submissionData);
   };
 
   return (
